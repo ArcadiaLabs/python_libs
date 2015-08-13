@@ -25,7 +25,7 @@ HD44780 / LCD2004 20x4 characters LCD
 ##### i2c_pca9685
 NXP PCA9685 16 Channels PMW controller
 
-###   Misc
+###   Misc
 ##### camera
 For use with pygame, functions to use a usb webcam
 ##### socket_gps
