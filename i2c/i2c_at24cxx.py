@@ -4,11 +4,11 @@
 # ATMEL AT24C16 16kb I2C EEPROM and AT24CXX series
 # Datasheet:  http://www.atmel.com/Images/doc3256.pdf
 # ==================================================
-#          _____
-#	A0	- 1	\_/	8 - VCC
-#	A1	- 2		7 - WP
-#	A2  - 3		6 - SCL	
-#	GND	- 4_____5 - SDA
+#              _____
+#	A0 - 1	\_/  8 - VCC
+#	A1 - 2	     7 - WP
+#	A2 - 3	     6 - SCL	
+#	GND- 4 _____ 5 - SDA
 #
 # Note : chip uses several I2C addresses, one per bank
 # on AT24C16, one bank is 128 pages of 16 bytes each. See datasheet for others.
