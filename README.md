@@ -11,7 +11,7 @@ For use with pygame, allows better placement of texts and pictures and allows te
 ##### i2c_core
 I2C core functions, needed by other i2c libs. Should autodetect Raspberry and Banana boards i2c bus number.
 ##### i2c_at24cxx
-ATMEL AT24C16 16kb I2C EEPROM and AT24CXX series *(not sure how to correctly use these)*
+ATMEL AT24C16 16kb I2C EEPROM and AT24CXX series *(not sure how to correctly use these EEPROM chips)*
 ##### i2c_bmp085
 Bosch BMP085 pressure and temperature sensor 
 ##### i2c_ds1621
