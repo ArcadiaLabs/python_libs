@@ -3,11 +3,11 @@ A lot of these libraries find a use with developer boards (Raspberry Pi, BBB...)
 
 For additional details about a specific function, see the lib file header.
 
-###   Draw 
+###     Draw 
 ##### drawfunctions
 For use with pygame, allows better placement of texts and pictures and allows text outline. 
 
-###   I2C
+###     I2C
 ##### i2c_core
 I2C core functions, needed by other i2c libs. Should autodetect Raspberry and Banana boards i2c bus number.
 ##### i2c_at24cxx
@@ -25,7 +25,7 @@ HD44780 / LCD2004 20x4 characters LCD
 ##### i2c_pca9685
 NXP PCA9685 16 Channels PMW controller
 
-###   Misc
+###     Misc
 ##### camera
 For use with pygame, functions to use a usb webcam
 ##### socket_gps
