@@ -3,6 +3,8 @@ A lot of these libraries find a use with developer boards (Raspberry Pi, BBB...)
 
 For additional details about a specific function, see the lib file header.
 
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?business=W8GSHCVF6N748&no_recurring=0&currency_code=EUR)
+
 ###      Camera
 #### camera
 For use with pygame, functions to use a usb webcam
