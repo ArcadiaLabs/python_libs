@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-"""Example code that demonstrates recording audio + video.
-
-The script uses the Raspberry Voice Bonnet main button to toggle recording.
-See the "# Initializes threads" part in this script to check optional parameters.
-"""
-
 import time
 import datetime
 import threading
@@ -13,13 +6,15 @@ import os
 from camera.AudioRecorder import AudioRecorder
 from camera.VideoRecorder import VideoRecorder
 from gpiozero import Button
-from gpiozero import LED
+# from gpiozero import LED
 from aiy.pins import BUTTON_GPIO_PIN
-from aiy.pins import LED_1
+# from aiy.pins import LED_1
 from signal import pause
+import math
+from aiy.leds import (Leds, Pattern, PrivacyLed, RgbLeds, Color)
 
 button = Button(BUTTON_GPIO_PIN)
-led = LED(LED_1)
+# led = LED(LED_1)
 
 recording = False
 
@@ -81,16 +76,51 @@ def main():
         os.mkdir(final_dir)
 
     # Initializes threads
-    video_thread = VideoRecorder(timestamp_bgcolor="black") # optional params : res_x=640, res_y=480, framerate=25, rotation=0, timestamp=True, timestamp_bgcolor="blue", timestamp_fontcolor="yellow", timestamp_fontsize=20, , timestamp_format="%d/%m/%Y, %H:%M:%S"
-    audio_thread = AudioRecorder() # optional params : device=0, channels=2, samplerate=44100
+    video_thread = VideoRecorder(timestamp_fontcolor="white", timestamp_bgcolor="black") 
+    # optional params (defaults) : 
+        # res_x=640, 
+        # res_y=480, 
+        # framerate=25, 
+        # rotation=0, 
+        # timestamp=True, 
+        # timestamp_bgcolor="blue", 
+        # timestamp_fontcolor="yellow", 
+        # timestamp_fontsize=20, 
+        # timestamp_format="%d/%m/%Y, %H:%M:%S"
+        
+    audio_thread = AudioRecorder(device=1) 
+    # optional params (defaults) : 
+        # device=0, 
+        # channels=2, 
+        # samplerate=44100
 
     # Allows time for camera to boot up
     time.sleep(2)
-
+    
+        
     # button.when_pressed = record_ten_seconds
     button.when_pressed = toggle_recording
     print("ready for action!")
-    pause()
+    # pause()
+    
+    with Leds() as leds:
+        while True:
+            if recording:
+                leds.update(Leds.rgb_off())
+                for i in range(8):
+                    leds.update(Leds.rgb_on((2 * i, 0, 0)))
+                    time.sleep(0.1)
+                for i in reversed(range(8)):
+                    leds.update(Leds.rgb_on((2 * i, 0, 0)))
+                    time.sleep(0.1)
+            else:
+                leds.update(Leds.rgb_off())
+                for i in range(8):
+                    leds.update(Leds.rgb_on((0, 2 * i, 0)))
+                    time.sleep(0.1)
+                for i in reversed(range(8)):
+                    leds.update(Leds.rgb_on((0, 2 * i, 0)))
+                    time.sleep(0.1)
 
 if __name__ == "__main__":
     main()
