@@ -2,8 +2,8 @@
 
 from misc import network_infos
 
-iface = "wlan0"
-wlan0 = network_infos.NetworkStats(iface=iface)
+interface = "wlan0"
+wlan0 = network_infos.NetworkStats(iface=interface)
 
 essid = str(wlan0.essid())
 print(iface + " ESSID : " + essid)
