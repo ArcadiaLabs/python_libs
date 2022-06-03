@@ -42,3 +42,5 @@ Connects to an open socket, and grabs position data. Usually works with an andro
 Reads inputs from a xbox360 wireless controller and sends as events to the system *(must check if still works)*
 #### colors
 Colors helpers in BGR format.
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?business=W8GSHCVF6N748&no_recurring=0&currency_code=EUR)
