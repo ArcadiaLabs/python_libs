@@ -3,6 +3,14 @@ A lot of these libraries find a use with developer boards (Raspberry Pi, BBB...)
 
 For additional details about a specific function, see the lib file header.
 
+###      Camera
+##### camera
+For use with pygame, functions to use a usb webcam
+##### VideoRecorder / AudioRecorder
+Records audio + video using picamera and ffmpeg. Requires picamera, pyaudio, wave, gpiozero (see *example_AVrecorder.py* for usage)
+##### cvVideoRecorder / AudioRecorder
+Records audio + video using OpenCV and ffmpeg. Requires OpenCV, pyaudio, wave, gpiozero (see *example_cvAVrecorder.py* for usage)
+
 ###      Draw 
 ##### drawfunctions
 For use with pygame, allows better placement of texts and pictures and allows text outline. 
@@ -26,9 +34,11 @@ HD44780 / LCD2004 20x4 characters LCD
 NXP PCA9685 16 Channels PMW controller
 
 ###      Misc
-##### camera
-For use with pygame, functions to use a usb webcam
+##### network_infos
+Shows ipv4, ipv6, ESSID and RSSI for a network interface. See *example_networkInfos.py* for usage.
 ##### socket_gps
 Connects to an open socket, and grabs position data. Usually works with an android device server and a custom apk.
 ##### xbox_read 
 Reads inputs from a xbox360 wireless controller and sends as events to the system *(must check if still works)*
+##### colors
+Colors helpers in BGR format.
