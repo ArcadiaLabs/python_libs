@@ -12,15 +12,14 @@ import subprocess
 import os
 from camera.AudioRecorder import AudioRecorder
 from camera.cvVideoRecorder import VideoRecorder
-from gpiozero import Button
-from gpiozero import LED
-from aiy.pins import BUTTON_GPIO_PIN
-from aiy.pins import LED_1
-from signal import pause
 from misc.colors import colors
+from gpiozero import Button
+from aiy.pins import BUTTON_GPIO_PIN
+from aiy.leds import (Leds, Pattern, PrivacyLed, RgbLeds, Color)
+from signal import pause
+import math
 
 button = Button(BUTTON_GPIO_PIN)
-led = LED(LED_1)
 
 recording = False
 
@@ -106,7 +105,25 @@ def main():
     # button.when_pressed = record_ten_seconds
     button.when_pressed = toggle_recording
     print("ready for action!")
-    pause()
+    
+    with Leds() as leds:
+        while True:
+            if recording:
+                leds.update(Leds.rgb_off())
+                for i in range(8):
+                    leds.update(Leds.rgb_on((2 * i, 0, 0)))
+                    time.sleep(0.1)
+                for i in reversed(range(8)):
+                    leds.update(Leds.rgb_on((2 * i, 0, 0)))
+                    time.sleep(0.1)
+            else:
+                leds.update(Leds.rgb_off())
+                for i in range(8):
+                    leds.update(Leds.rgb_on((0, 2 * i, 0)))
+                    time.sleep(0.1)
+                for i in reversed(range(8)):
+                    leds.update(Leds.rgb_on((0, 2 * i, 0)))
+                    time.sleep(0.1)
 
 if __name__ == "__main__":
     main()

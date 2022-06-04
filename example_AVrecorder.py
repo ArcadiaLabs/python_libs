@@ -6,15 +6,12 @@ import os
 from camera.AudioRecorder import AudioRecorder
 from camera.VideoRecorder import VideoRecorder
 from gpiozero import Button
-# from gpiozero import LED
 from aiy.pins import BUTTON_GPIO_PIN
-# from aiy.pins import LED_1
+from aiy.leds import (Leds, Pattern, PrivacyLed, RgbLeds, Color)
 from signal import pause
 import math
-from aiy.leds import (Leds, Pattern, PrivacyLed, RgbLeds, Color)
 
 button = Button(BUTTON_GPIO_PIN)
-# led = LED(LED_1)
 
 recording = False
 
@@ -101,7 +98,6 @@ def main():
     # button.when_pressed = record_ten_seconds
     button.when_pressed = toggle_recording
     print("ready for action!")
-    # pause()
     
     with Leds() as leds:
         while True:
