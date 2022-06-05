@@ -9,9 +9,9 @@ For additional details about a specific function, see the lib file header.
 #### camera
 For use with pygame, functions to use a usb webcam
 #### VideoRecorder / AudioRecorder
-Records audio + video using picamera and ffmpeg. Requires picamera, pyaudio, wave, gpiozero (see *example_AVrecorder.py* for usage)
+Records audio + video using picamera and ffmpeg. Requires libportaudio2 (apt), sounddevice (pip3), picamera (pip3), pyaudio (pip3), wave (pip3), gpiozero (pip3) (see *example_AVrecorder.py* for usage)
 #### cvVideoRecorder / AudioRecorder
-Records audio + video using OpenCV and ffmpeg. Requires OpenCV, pyaudio, wave, gpiozero (see *example_cvAVrecorder.py* for usage)
+Records audio + video using OpenCV and ffmpeg. Requires libportaudio2 (apt), python-opencv (pip3), sounddevice (pip3), pyaudio (pip3), wave (pip3), gpiozero (pip3) (see *example_cvAVrecorder.py* for usage)
 
 ###      Draw 
 ##### drawfunctions
